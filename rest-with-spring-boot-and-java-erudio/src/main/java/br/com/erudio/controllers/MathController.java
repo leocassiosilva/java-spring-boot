@@ -14,15 +14,17 @@ public class MathController {
         @PathVariable("numerberTwo") String numerberTwo
     ) throws Exception {
 
-        if (!isNumeric(numerberOne) || !isNumeric(numerberTwo)) throw new IllegalArgumentException();
-        
+        if (!isNumeric(numerberOne) || !isNumeric(numerberTwo)) 
+            throw new UnsupportedOperationException("Please set a numeric value!");
+    
         return convertToDouble(numerberOne) + convertToDouble(numerberTwo);
     }
 
     // Metodo para converter String para Double
     private Double convertToDouble(String strNumber) throws IllegalArgumentException {
         // Verifica se a string é nula ou vazia
-        if (strNumber == null || strNumber.isEmpty()) throw new IllegalArgumentException();
+        if (strNumber == null || strNumber.isEmpty()) 
+            throw new UnsupportedOperationException("Please set a numeric value!");
 
         // Aplica a substituição de vírgula por ponto
         String number = strNumber.replace(",", ".");
