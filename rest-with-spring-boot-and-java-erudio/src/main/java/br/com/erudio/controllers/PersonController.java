@@ -2,7 +2,7 @@ package br.com.erudio.controllers;
 
 
 import br.com.erudio.model.Person;
-import br.com.erudio.request.converters.PersonServices;
+import br.com.erudio.services.PersonServices;
 
 import java.util.List;
 
