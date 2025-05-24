@@ -35,7 +35,7 @@ public class CustomEntityReponseHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)
-    public final ResponseEntity<ExceptionResponse> handleBadRequestException(Exception ex, WebRequest request) {
+    public final ResponseEntity<ExceptionResponse> handleNotFoundException(Exception ex, WebRequest request) {
         ExceptionResponse response = new ExceptionResponse(
             new Date(), 
             ex.getMessage(),
@@ -45,7 +45,7 @@ public class CustomEntityReponseHandler extends ResponseEntityExceptionHandler {
 
         return new ResponseEntity<>(
             response,
-            HttpStatus.BAD_REQUEST
+            HttpStatus.NOT_FOUND
         );
 
     }
