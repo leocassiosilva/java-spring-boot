@@ -37,6 +37,7 @@ public class PersonController {
     public PersonDTO findById(@PathVariable("id") Long id){
         var person = service.findById(id);
         person.setBirthDay(new Date());
+        person.setPhoneNumber("123-456-7890");
         return person;
     }
 
