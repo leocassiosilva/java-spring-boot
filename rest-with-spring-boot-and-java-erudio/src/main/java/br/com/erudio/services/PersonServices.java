@@ -2,7 +2,6 @@ package br.com.erudio.services;
 
 import br.com.erudio.data.dto.PersonDTO;
 import br.com.erudio.exception.ResourceNotFoundException;
-import br.com.erudio.mapper.ObjectMapper;
 import br.com.erudio.model.Person;
 import br.com.erudio.repository.PersonRepository;
 import static br.com.erudio.mapper.ObjectMapper.parseListObjects;
@@ -12,7 +11,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
