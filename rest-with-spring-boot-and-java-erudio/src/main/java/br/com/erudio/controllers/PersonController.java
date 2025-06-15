@@ -4,7 +4,6 @@ package br.com.erudio.controllers;
 import br.com.erudio.data.dto.PersonDTO;
 import br.com.erudio.services.PersonServices;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,8 +35,6 @@ public class PersonController {
     )
     public PersonDTO findById(@PathVariable("id") Long id){
         var person = service.findById(id);
-        person.setBirthDay(new Date());
-        person.setPhoneNumber("123-456-7890");
         return person;
     }
 

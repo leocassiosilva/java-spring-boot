@@ -27,25 +27,15 @@ public class PersonDTO implements Serializable {
 
     private Long id;
 
-    // @JsonProperty("first_name")
     private String firstName;
 
-    // @JsonProperty("last_name")
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String lastName;
 
-    @JsonInclude(JsonInclude.Include.NON_EMPTY)
     private String phoneNumber; 
 
 
-    @JsonFormat(pattern = "dd/MM/yyyy")
-    private Date birthDay;
-
     private String address;
 
-    // @JsonIgnore
-    @JsonSerialize(using = GenderSerializer.class)
     private String gender;
 
 
@@ -95,14 +85,6 @@ public class PersonDTO implements Serializable {
     }
 
 
-    public Date getBirthDay() {
-        return birthDay;
-    }
-
-    public void setBirthDay(Date birthDay) {
-        this.birthDay = birthDay;
-    }
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -127,7 +109,6 @@ public class PersonDTO implements Serializable {
         result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
         result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
         result = prime * result + ((phoneNumber == null) ? 0 : phoneNumber.hashCode());
-        result = prime * result + ((birthDay == null) ? 0 : birthDay.hashCode());
         result = prime * result + ((address == null) ? 0 : address.hashCode());
         result = prime * result + ((gender == null) ? 0 : gender.hashCode());
         result = prime * result + ((sensitiveData == null) ? 0 : sensitiveData.hashCode());
@@ -162,11 +143,6 @@ public class PersonDTO implements Serializable {
             if (other.phoneNumber != null)
                 return false;
         } else if (!phoneNumber.equals(other.phoneNumber))
-            return false;
-        if (birthDay == null) {
-            if (other.birthDay != null)
-                return false;
-        } else if (!birthDay.equals(other.birthDay))
             return false;
         if (address == null) {
             if (other.address != null)
